@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+.clear-btn{
+  border: #A52A2A 0.5px solid!important;
+  color: #A52A2A!important;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.deactivate-btn{
+  border: #A52A2A 0.5px solid!important;
+  color: #A52A2A!important;
+  margin-top: 15px;
+  font-size: 14px!important;
+  margin-bottom: 15px;
+}
+.save-btn{
+  background-color: #A52A2A!important;
+  color: white!important;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.action_btn_group{
+  float: left;
+  display: flex;
+  column-gap: 10px;
+}
+.form-cont{
+   
+  box-shadow:  rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  background-color: white;
+  padding:30px;
+  flex-direction: column;
+  row-gap: 10px;
+  height: 150px;
+}

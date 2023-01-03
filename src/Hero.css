@@ -1,0 +1,38 @@
+.carousel_content{
+padding: 20px;
+display: flex;
+justify-content: flex-start;
+margin: auto;
+top: 50%;
+left: 5%;
+width: 100%;
+border-radius: 25px;
+}
+.carousel_bg{
+    background: linear-gradient(to right, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.5));
+    width: 50%;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+    position: absolute;
+    display: flex;
+    color: white;
+}
+.carousel_img{
+    height: 700px;
+    object-fit: cover;
+}
+.carousel_content{
+font-size: 30px;
+}
+.carousel_title{
+font-size: 40px;
+font-weight: 400;
+}
+.card_style{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.card_style:hover {
+  transform: scale(1.05);
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
