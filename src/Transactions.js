@@ -2,6 +2,8 @@ import { Container,Stack } from "react-bootstrap";
 import { useEffect, useState} from 'react';
 import DataService from "./DataService";
 import React from "react";
+import { parseISO,format } from 'date-fns'
+
 import {
     Alert,
     AlertIcon,
@@ -12,6 +14,7 @@ import {
   import axios from 'axios';  
   import './App.css'  
   import Card from 'react-bootstrap/Card';
+import { BsEye } from "react-icons/bs";
 
 export default function Transactions(props){
 
@@ -149,11 +152,12 @@ const columns = [
     {
         name: 'Transaction Type',
         selector: row => row.transaction_type == 1 ? "Deposit":"Withdrawal",
-        sortable: true
+        sortable: true,
+        // filterable: true
     },
     {
         name: 'Date',
-        selector: row => row.timestamp,
+        selector: row => row.timestamp != null ? format(parseISO(row.timestamp),'MMMM dd yyyy').toString() : "",
         sortable: true
     },
     {
@@ -173,7 +177,7 @@ const columns = [
            (
             <>
               <button className='btn clear-btn' onClick={() => (row.labor_code_id)} style={{ fontsize: "10px" }}>
-               View More
+               <BsEye/>
               </button>
             
             </>
@@ -184,9 +188,11 @@ const columns = [
 
 const showList = (
     <>
+    <div className="action_btn_group_1">
     <button className='btn clear-btn' style={{float:'right'}} onClick={handleDeposit}>Deposit</button>
    
     <button className='btn save-btn' style={{float:'right'}} onClick={handleWithdrawal}>Withdraw</button>
+    </div>
     <DataService API_URL={API_URL} tableTitle={tableTitle} columns={columns} />
     </>
   )

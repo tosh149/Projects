@@ -2,6 +2,13 @@ import { Col, Container, Row, Stack } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
+import {
+    Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
+
+  } from '@chakra-ui/react'
 import './App.css'  
 
 function CreditCard() {
@@ -64,6 +71,19 @@ function CreditCard() {
   return (
 
     <Container fluid style={{padding:0}} >
+
+{status?.type === 'success' &&  
+    <Alert status='success'>
+  <AlertIcon />
+  Success, The deposit has been made to your account
+</Alert>}
+
+{status?.type === 'failed' &&  
+    <Alert status='error'>
+  <AlertIcon />
+  Error, Kindly contact our customer care
+</Alert>}
+
         <Row className='d-flex justify-content-center'>
 
             <Col md lg='8'>

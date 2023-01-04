@@ -1,5 +1,6 @@
 import { useEffect, useState, useMemo } from 'react';
-import DataTable from 'react-data-table-component';
+// import DataTable from 'react-data-table-component';
+import DataTable from 'react-data-table-component-with-filter';
 import axios from 'axios';    
 import FilterComponent from './FilterComponent';
 
@@ -16,8 +17,6 @@ const DataService = (props) =>{
     const API_URL=props.API_URL;
    
 
-    console.log(props.API_URL)
-
     const [data,getData] = useState([])
 
     const fetchData = async () =>{
@@ -31,7 +30,7 @@ const DataService = (props) =>{
         };
 
         const response = await axios.get(`${API_URL}`);
-        console.log(response.data)
+
          getData(response.data);
       }
 
@@ -51,7 +50,7 @@ const DataService = (props) =>{
  useEffect(() =>{
         fetchData();
     
-    },[API_URL])
+    },[])
 
     const [filterText, setFilterText] = useState("");
     const [resetPaginationToggle, setResetPaginationToggle] = useState(
@@ -64,7 +63,7 @@ const DataService = (props) =>{
       item =>
         JSON.stringify(item)
           .toLowerCase()
-          .indexOf(filterText.toLowerCase()) !== -1
+          .includes(filterText.toLowerCase())
     );
   
     const subHeaderComponent = useMemo(() => {

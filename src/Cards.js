@@ -1,7 +1,9 @@
-import { Container, Row, Stack } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+
+import { Container, Row, Stack,Button } from 'react-bootstrap';
+
 import Card from 'react-bootstrap/Card';
 import './Hero.css'
+import { BsFacebook,BsGoogle,BsInstagram,BsLinkedin,BsTwitter } from "react-icons/bs";
 
 function CardSection() {
   return (
@@ -10,37 +12,34 @@ function CardSection() {
         <Stack gap={5} direction={'horizontal'}>
     <Card style={{ width: '26rem'}} className="card_style">
       <Card.Img variant="top" src="https://images.pexels.com/photos/164571/pexels-photo-164571.jpeg?auto=compress&cs=tinysrgb&w=800" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+      <Card.Body className='card_body'>
+        <Card.Title>Platinum Credit Card</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        High spenders, this gives you an unlimited credit use 
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button  variant='btn card_btn'>Apply Here</Button>
       </Card.Body>
     </Card>
 
     <Card style={{ width: '26rem'}} className="card_style">
       <Card.Img variant="top" src="https://images.pexels.com/photos/164501/pexels-photo-164501.jpeg?auto=compress&cs=tinysrgb&w=800" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+      <Card.Body className='card_body'>
+        <Card.Title>Gold Credit Card</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          Not as fancy as the platinum but gives you a limit of up to $50,000
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button  variant='btn card_btn'>Apply Here</Button>
       </Card.Body>
     </Card>
 
     <Card style={{ width: '26rem'}} className="card_style">
       <Card.Img variant="top" src="https://images.pexels.com/photos/45111/pexels-photo-45111.jpeg?auto=compress&cs=tinysrgb&w=800" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+      <Card.Body className='card_body'>
+        <Card.Title>Silver Credit Card</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+         If you are a low spender this is for you get a limit of up to $20,000 
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant='btn card_btn'>Apply Here</Button>
       </Card.Body>
     </Card>
     </Stack>
@@ -88,6 +87,90 @@ function CardSection() {
      </Stack>
 
     </Container>
+
+<div className=" my-5" style={{backgroundColor:'#f46524',marginBottom:'0px'}}>
+  <footer className="text-center text-white" style={{backgroundColor: "#3f51b"}}>
+    <div className="container">
+      <section className="mt-5">
+        <div className="row text-center d-flex justify-content-center pt-5">
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-white">About us</a>
+            </h6>
+          </div>
+
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-white">Products</a>
+            </h6>
+          </div>
+
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-white">Awards</a>
+            </h6>
+          </div>
+
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-white">Help</a>
+            </h6>
+          </div>
+
+          <div className="col-md-2">
+            <h6 className="text-uppercase font-weight-bold">
+              <a href="#!" className="text-white">Contact</a>
+            </h6>
+          </div>
+        </div>
+      </section>
+
+      <hr className="my-5" />
+
+      <section className="mb-5">
+        <div className="row d-flex justify-content-center">
+          <div className="col-lg-8">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+              distinctio earum repellat quaerat voluptatibus placeat nam,
+              commodi optio pariatur est quia magnam eum harum corrupti
+              dicta, aliquam sequi voluptate quas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="text-center mb-5" style={{display:'flex',justifyContent:'center'}}>
+        <a href="" className="text-white me-4">
+          <BsFacebook/>
+        </a>
+        <a href="" className="text-white me-4">
+         <BsTwitter/>
+        </a>
+        <a href="" className="text-white me-4">
+        <BsGoogle/>
+        </a>
+        <a href="" className="text-white me-4">
+          <BsInstagram/>
+        </a>
+        <a href="" className="text-white me-4">
+         <BsLinkedin/>
+        </a>
+       
+      </section>
+    </div>
+
+    <div
+         className="text-center p-3"
+         style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}
+         >
+      © 2023 Copyright:
+      <a className="text-white" href="#"
+         >Larry Devs</a
+        >
+    </div>
+  </footer>
+</div>
     </>
   );
 }
